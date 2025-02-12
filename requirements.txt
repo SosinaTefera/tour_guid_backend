@@ -6,4 +6,5 @@ passlib
 python-dotenv
 jwt
 google-cloud-bigquery
+sqlalchemy-bigquery
 pydantic  
