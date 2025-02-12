@@ -2,7 +2,10 @@ from sqlalchemy.engine import create_engine
 from google.cloud import bigquery
 from google.oauth2 import service_account
 from sqlalchemy.orm import sessionmaker, declarative_base
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
 
 CREDENTIALS_PATH = os.getenv("CREDENTIALS_PATH")
 credentials = service_account.Credentials.from_service_account_file(CREDENTIALS_PATH)
