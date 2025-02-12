@@ -5,4 +5,5 @@ bcrypt
 passlib
 python-dotenv
 jwt
-google-cloud-bigquery  
+google-cloud-bigquery
+pydantic  
