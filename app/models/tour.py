@@ -1,5 +1,7 @@
 from sqlalchemy import Column, String, Text, Float, DateTime
 from app.services.database import Base
+from sqlalchemy.orm import relationship
+
 
 
 
@@ -14,4 +16,6 @@ class Tour(Base):
     image = Column(String, nullable=True)  
     price = Column(Float, nullable=False)
     created_at = Column(DateTime) 
+    reviews = relationship("Review", back_populates="tour")  
+
 

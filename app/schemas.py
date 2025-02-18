@@ -1,5 +1,5 @@
 from pydantic import BaseModel, EmailStr
-from typing import Literal
+from typing import Literal,List
 from datetime import datetime
 
 
@@ -15,29 +15,6 @@ class UserLogin(BaseModel):
     password: str
 
 
-
-# Tour
-class TourBase(BaseModel):
-    title: str
-    description: str
-    latitude: float
-    longitude: float
-    image: str  
-    price: float
-    created_at: datetime
-
-class TourCreate(TourBase):
-    pass  
-
-class TourUpdate(TourBase):
-    pass  
-
-class TourResponse(TourBase):
-    id: str
-
-    class Config:
-        from_attributes = True
-
 # Review
 class ReviewCreate(BaseModel):
     comment: str
@@ -51,3 +28,29 @@ class ReviewResponse(BaseModel):
     user_id: str
     created_at: datetime
     tour_id: str
+
+
+# Tour
+class TourBase(BaseModel):
+    title: str
+    description: str
+    latitude: float
+    longitude: float
+    image: str  
+    price: float
+    created_at: datetime
+    reviews: List[ReviewResponse] = []  
+
+
+class TourCreate(TourBase):
+    pass  
+
+class TourUpdate(TourBase):
+    pass  
+
+class TourResponse(TourBase):
+    id: str
+
+    class Config:
+        from_attributes = True
+
