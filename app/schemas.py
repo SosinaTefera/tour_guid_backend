@@ -37,3 +37,17 @@ class TourResponse(TourBase):
 
     class Config:
         from_attributes = True
+
+# Review
+class ReviewCreate(BaseModel):
+    comment: str
+    rating: float
+    tour_id: str
+
+class ReviewResponse(BaseModel):
+    id: str
+    comment: str
+    rating: float
+    user_id: str
+    created_at: datetime
+    tour_id: str
