@@ -3,6 +3,7 @@ from sqlalchemy.orm import Session
 from typing import List
 from app.schemas import TourUpdate, TourResponse
 from app.models.tour import Tour
+from app.models.review import Review
 from app.services.database import get_db
 from app.services.auth import get_current_user
 from app.config import UPLOAD_DIR
@@ -19,6 +20,11 @@ def get_tours(db: Session = Depends(get_db),
     current_user: dict = Depends(get_current_user)  
 ):
     tours = db.query(Tour).all()
+
+    reviews = db.query(Review).all()
+    for tour in tours:
+        tour.reviews = [review for review in reviews if review.tour_id == tour.id]
+
     return tours
 
 
