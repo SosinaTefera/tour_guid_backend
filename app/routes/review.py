@@ -4,7 +4,7 @@ from typing import List
 from app.schemas import ReviewCreate, ReviewResponse
 from app.models.tour import Tour
 from app.models.review import Review
-from app.models import User
+from app.models.user import User
 from app.services.database import get_db
 from app.services.auth import get_current_user
 from datetime import datetime
