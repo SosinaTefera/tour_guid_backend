@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from app.services.database import Base, engine
-from app.routes import user, tour, review,visualization
+from app.routes import user, tour, review, visualization
 
 
 app = FastAPI()

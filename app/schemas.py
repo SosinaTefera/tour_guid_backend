@@ -1,5 +1,5 @@
 from pydantic import BaseModel, EmailStr
-from typing import Literal,List
+from typing import Literal, List, Optional
 from datetime import datetime
 
 
@@ -54,3 +54,18 @@ class TourResponse(TourBase):
     class Config:
         from_attributes = True
 
+
+# User Profile
+class UserProfileResponse(BaseModel):
+    id: str
+    first_name: str
+    last_name: str
+    email: EmailStr
+    role: str
+
+    # class Config:
+    #     from_attributes = True  
+
+class UserProfileUpdate(BaseModel):
+    first_name: Optional[str] = None
+    last_name: Optional[str] = None
