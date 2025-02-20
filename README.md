@@ -26,7 +26,7 @@ Ensure you have the following installed:
 ### Setup Steps
 1. **Clone the Repository**
    ```sh
-   git clone https://github.com/SosinaTefera/tour_guid_backend.git
+   git clone https://github.com/SosinaTefera/tour_guid_backend.git # Or SSH URL
    cd tour_guide_backend
    ```
 2. **Create Virtual Environment**
@@ -45,6 +45,6 @@ Ensure you have the following installed:
    ```
 6. **Start the Server**
    ```sh
-   uvicorn app.main:app --reload  # If using FastAPI
+   uvicorn app.main:app --reload
    ```
 
