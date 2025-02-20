@@ -1,0 +1,12 @@
+fastapi[all]
+uvicorn
+sqlalchemy
+bcrypt
+passlib
+python-dotenv
+jwt
+google-cloud-bigquery
+sqlalchemy-bigquery
+google-cloud-bigquery-storage
+pydantic  
+PyJWT
