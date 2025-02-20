@@ -25,6 +25,6 @@ def create_access_token(data: dict):
 def get_current_user(token: str = Depends(oauth2_scheme)):
     try:
         payload = jwt.decode(token, SECRET_KEY, algorithms=["HS256"])
-        return {"email": payload["sub"], "role": payload["role"],"id": payload['id']}
+        return {"email": payload["sub"], "role": payload["role"],"id": payload['id'], "first_name": payload['first_name'], "last_name": payload['last_name']}
     except :
         raise HTTPException(status_code=401, detail="Invalid token")
